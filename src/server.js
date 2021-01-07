@@ -20,12 +20,7 @@ const server = app.listen(PORT, handleListening);
 //use socketio on top of the sever
 const io = socketIO(server);
 
-//manage connected sockets
-let sockets = [];
-
 //set connection
 io.on("connection", socket => {
-  sockets.push(socket.id);
+  socket.on("helloGuys", () => console.log("the client said hello"));
 });
-
-setInterval(() => console.log(sockets), 1000);
