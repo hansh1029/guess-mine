@@ -5,8 +5,9 @@ Realtime Drawing Game built with SocketIO, Gulp and Node. Nomad.
 
 - [x] Server
 - [x] Pug
-- [ ] Static
-- [ ] SocketIO
+- [X] Static
+- [x] ESLint
+- [X] SocketIO
 
 ## socketIO
 https://socket.io/
