@@ -21,6 +21,16 @@ const server = app.listen(PORT, handleListening);
 const io = socketIO(server);
 
 //set connection
-io.on("connection", socket => {
-  socket.on("helloGuys", () => console.log("the client said hello"));
+// io is socket server, on is listening event, socket is connection, emit sends event to the connected socket,boadcast sends event to all sockets excepts the socket just conneced now.
+// eslint-disable-next-line prettier/prettier
+io.on("connection", (socket) => {
+  socket.on("newMessage", ({ message }) => {
+    socket.broadcast.emit("messageNotif", {
+      message,
+      nickname: socket.nickname || "Anon",
+    });
+  });
+  socket.on("setNickname", ({ nickname }) => {
+    socket.nickname = nickname;
+  });
 });
