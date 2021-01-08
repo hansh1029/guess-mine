@@ -11,3 +11,9 @@ Realtime Drawing Game built with SocketIO, Gulp and Node. Nomad.
 
 ## socketIO
 https://socket.io/
+
+## Gulp
+https://gulpjs.com/
+
+## gulp-sass
+https://www.npmjs.com/package/gulp-sass
