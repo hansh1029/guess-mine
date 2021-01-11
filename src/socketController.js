@@ -1,8 +1,9 @@
 /* eslint-disable prettier/prettier */
+import events from "./events";
+
 const socketController = (socket) => {
-  socket.on("setNickname", ({ nickname }) => {
+  socket.on(events.setNickname, ({ nickname }) => {
     socket.nickname = nickname;
-    console.log(socket.nickname);
   });
 };
 
